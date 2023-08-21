@@ -1,0 +1,25 @@
+{
+    "albums": [
+      {
+        "id": 1,
+        "name": "÷ (Divide)"
+      },
+      {
+        "id": 2,
+        "name": "21"
+      },
+      {
+        "id": 3,
+        "name": "Uptown Special"
+      },
+      {
+        "id": 4,
+        "name": "Thriller"
+      },
+      {
+        "id": 5,
+        "name": "A Night at the Opera"
+      }
+    ]
+  }
+  

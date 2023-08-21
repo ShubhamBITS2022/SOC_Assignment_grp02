@@ -1,0 +1,25 @@
+{
+    "singers": [
+      {
+        "id": 1,
+        "name": "Ed Sheeran"
+      },
+      {
+        "id": 2,
+        "name": "Adele"
+      },
+      {
+        "id": 3,
+        "name": "Mark Ronson ft. Bruno Mars"
+      },
+      {
+        "id": 4,
+        "name": "Michael Jackson"
+      },
+      {
+        "id": 5,
+        "name": "Queen"
+      }
+    ]
+  }
+  

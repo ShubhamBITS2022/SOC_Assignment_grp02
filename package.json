@@ -1,0 +1,23 @@
+{
+  "name": "soc_assignment_grp02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShubhamBITS2022/SOC_Assignment_grp02.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShubhamBITS2022/SOC_Assignment_grp02/issues"
+  },
+  "homepage": "https://github.com/ShubhamBITS2022/SOC_Assignment_grp02#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
