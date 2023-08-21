@@ -43,5 +43,44 @@ fs.readFile('./Data_source/songsData.json', 'utf8', (err, jsonString) => {
         });
       });
 
+      //Four: Delete song by id
+      router.delete('/song/:id', (req, res, next) => {
+        const songId = req.params.id;
+
+        if (!songData.songs[songId]) {
+          return res.status(404).json({ error: 'Song not found' });
+        }
+        delete songData.songs[songId];
+        fs.writeFile('./Data_source/songsData.json', JSON.stringify(songData), 'utf8', err => {
+          if (err) {
+            console.log("File write failed:", err);
+            return res.status(500).json({ error: 'Failed to save song data' });
+          }
+    
+          res.json({ message: 'Song deleted successfully' });
+        });
+      });
+
+      //Five: Update song details
+      router.put('/song/:id', (req, res, next) => {
+        const songId = req.params.id;
+        const updatedSong = req.body; 
+        
+        if (!songData.songs[songId]) {
+          return res.status(404).json({ error: 'Song not found' });
+        }
+    
+        songData.songs[songId] = updatedSong;
+        
+        fs.writeFile('./Data_source/songsData.json', JSON.stringify(songData), 'utf8', err => {
+          if (err) {
+            console.log("File write failed:", err);
+            return res.status(500).json({ error: 'Failed to save song data' });
+          }
+    
+          res.json({ message: 'Song updated successfully' });
+        });
+      });
+
   });
 module.exports=router;
