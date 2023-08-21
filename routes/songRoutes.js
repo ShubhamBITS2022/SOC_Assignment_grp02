@@ -25,5 +25,23 @@ fs.readFile('./Data_source/songsData.json', 'utf8', (err, jsonString) => {
         res.json(song);
       });
 
+    //Three: add new song
+    router.post('/song', (req, res, next) => {
+        const newSong = req.body; 
+        
+        const newSongId = "song" + Date.now();
+        
+        songData[newSongId] = newSong;
+        
+        fs.writeFile('./Data_source/songsData.json', JSON.stringify(songData), 'utf8', err => {
+          if (err) {
+            console.log("File write failed:", err);
+            return res.status(500).json({ error: 'Failed to save song data' });
+          }
+    
+          res.status(201).json({ message: 'Song added successfully', id: newSongId });
+        });
+      });
+
   });
 module.exports=router;
